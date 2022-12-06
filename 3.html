@@ -1,21 +1,55 @@
 <!doctype html>
 <html>
 <head>
-<title>WEB1 - JavaScript</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="style.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2001HFV3DM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <title>WEB1 - JavaScript</title>
+  <meta charset="utf-8">
+  <script>
+    function nightDayHandler(self) {
+      var target = document.querySelector('body');
+      if(self.value === 'night') {
+       target.style.backgroundColor='black';
+       target.style.color='white';
+       self.value = 'day';
 
-  gtag('config', 'G-2001HFV3DM');
-</script>
+       var alist = document.querySelectorAll('a');
+        var i =0;
+          while(i < alist.length){
+            alist[i].style.color = 'powderblue' ;
+            i = i+1;
+          }
+     } else {
+       target.style.backgroundColor='white';
+       target.style.color='black';
+       self.value = 'night';
+
+       var alist = document.querySelectorAll('a');
+        var i =0;
+          while(i < alist.length){
+            alist[i].style.color = 'blue' ;
+            i = i+1;
+          }
+        }
+      }
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2001HFV3DM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2001HFV3DM');
+   </script>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
+  <input type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
+  <input type="button" value="night" onclick="
+    nightDayHandler(this);
+  ">
   <div id="grid">
   <ol>
     <li><a href="1.html">HTML</a></li>
